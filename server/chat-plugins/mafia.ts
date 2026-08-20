@@ -1095,7 +1095,7 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 		voter.voting = targetId;
 		voter.lastVote = Date.now();
 
-const name = voter.voting === 'novote' ? 'No Vote' : target?.getDisplayName();
+		const name = voter.voting === 'novote' ? 'No Vote' : target?.getDisplayName();
 		const voterKey = voter.anon ? voter.aliasid : voter.id;
 		const targetKey = target ? (target.anon ? target.aliasid : target.id) : null;
 		const voteKeys = targetKey ? [voterKey, targetKey] : [voterKey];
@@ -1111,7 +1111,6 @@ const name = voter.voting === 'novote' ? 'No Vote' : target?.getDisplayName();
 				`${voter.getDisplayName()} has voted ${name}.`;
 			this.sendTimestamp(voteMessage);
 			this.recordMessage(`*${voteMessage}*`, voteKeys, voter.anon ? voter.alias : voter.safeName);
-		}
 		}
 
 		this.hasPlurality = null;
@@ -1178,7 +1177,7 @@ const unvoteMessage = voter.voting === 'novote' ?
 			const voterKey = voter.anon ? voter.aliasid : voter.id;
 			const targetKey = target ? (target.anon ? target.aliasid : target.id) : null;
 			const voteKeys = targetKey ? [voterKey, targetKey] : [voterKey];
-			this.recordMessage(`*${unvoteMessage}*`, unvoteKeys, voter.anon ? voter.alias : voter.safeName);
+			this.recordMessage(`*${unvoteMessage}*`, voteKeys, voter.anon ? voter.alias : voter.safeName);
 		}
 		voter.voting = '';
 		voter.lastVote = Date.now();
@@ -2418,7 +2417,7 @@ export const pages: Chat.PageTable = {
 			buf += `<p>To set a deadline, use <strong>/mafia deadline [minutes]</strong>.<br />To clear the deadline use <strong>/mafia deadline off</strong>.</p><hr/></details></p>`;
 			buf += `<p><details><summary class="button" style="text-align:left; display:inline-block">Player Options</summary>`;
 			buf += `<h3>Player Options</h3>`;
-			for (const player of game.getRemainingAliases().map(alias => game.getPlayerByAlias(alias))) {
+			for (const player of game.getRemainingAliases().map(alias => game.getPlayerByAlias(toID(alias))).filter(alias => alias !== null)) {
 				buf += `<p><details><summary class="button" style="text-align:left; display:inline-block"><span style="font-weight:bold;">`;
 				buf += `${player.safeName} (${player.role ? player.getStylizedRole(true) : ''})`;
 				buf += game.voteModifiers[player.id] !== undefined ? `(votes worth ${game.getVoteValue(player)})` : '';
