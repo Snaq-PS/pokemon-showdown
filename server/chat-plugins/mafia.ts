@@ -1976,7 +1976,7 @@ const unvoteMessage = voter.voting === 'novote' ?
 
 		const shuffledPlayers = Utils.shuffle(this.players);
 
-		for (let i = 0; i < shuffledPlayers.filter(player => player.hydra).length; i++) {
+		for (let i = 0; i < shuffledPlayers.filter(player => player.hydra && !player.partnerid).length; i++) {
 			if (i % 2 === 0) {
 				const randPoke = Utils.randomElement(this.getPokemonNamePool().filter(name => !this.getPlayerByAlias(toID(name))));
 				shuffledPlayers.filter(player => player.hydra)[i].alias = `${prefix} ${randPoke}`;
@@ -1989,7 +1989,7 @@ const unvoteMessage = voter.voting === 'novote' ?
 			}
 		}
 
-		for (let player of shuffledPlayers.filter(player => player.anon && !player.hydra)) {
+		for (let player of shuffledPlayers.filter(player => player.anon && !player.hydra && player.aliasid)) {
 			let randPoke = Utils.randomElement(this.getPokemonNamePool().filter(name => !this.getPlayerByAlias(toID(name))));
 			player.alias = `${prefix} ${randPoke}`;
 			player.aliasid = toID(randPoke);
@@ -2035,8 +2035,6 @@ const unvoteMessage = voter.voting === 'novote' ?
 		for (let player of Utils.shuffle(this.players)) {
 			player.darkness = setting;
 		}
-
-		this.updateAnonModule();
 	}
 
 	setSelfVote(user: User, setting: boolean | 'hammer') {
@@ -2175,7 +2173,7 @@ const unvoteMessage = voter.voting === 'novote' ?
 		if (player.darkness) {
 			if (message.startsWith("!")) return "You cannot send commands.";
 			this.recordMessage(message, player.getNameId(), player.getDisplayName());
-			this.room.add(`|c:|${Date.now() / 1000}| DARKNESS}|${message}`).update();
+			this.room.add(`|c:|${Date.now() / 1000}| DARKNESS|${message}`).update();
 			return ``;
 		}
 
@@ -3673,6 +3671,8 @@ export const commands: Chat.ChatCommands = {
 				if (!targets.some(target => target.key === isoTarget.key)) targets.push(isoTarget);
 			}
 			this.sendReplyBox(game.createIso(targets, staffIso));
+
+			game.logAction(user, `checked non-anon isos`);
 		},
 		isohelp: [
 			`/mafia iso [player1, player2, ...] - Shows the selected players' messages from the game. In an anonymous game, use aliases; real usernames do not work.`,
