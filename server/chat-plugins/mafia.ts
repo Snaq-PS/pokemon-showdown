@@ -331,7 +331,7 @@ class MafiaPlayer extends Rooms.RoomGamePlayer<Mafia> {
 	}
 
 	getDisplayName() {
-		if (this.getAnonymized()) return this.alias;
+		if (this.getAnonymized() && this.alias) return this.alias;
 		return this.safeName;
 	}
 
@@ -561,8 +561,8 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 		const player = this.anon ? this.getPlayerByAlias(targetID) : this.getPlayer(targetID);
 		if (!player) return null;
 		return {
-			key: this.anon ? player.aliasid : player.id,
-			name: this.anon ? player.alias : player.safeName,
+			key: player.getNameId(),
+			name: player.getDisplayName(),
 		};
 	}
 
@@ -603,7 +603,7 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 			if (!message.keys.length) {
 				output += `<br />${message.timestamp} ${message.message}<br />`;
 			} else {
-				output += `${message.timestamp} <strong><username>${message.name}</username>:</strong> ${message.message}<br />`;
+				output += `${message.timestamp} <strong><username>${message.name}:</username></strong> ${message.message}<br />`;
 			}
 		}
 		return output + `</details>`;
@@ -980,7 +980,7 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 		if (this.dayNum === 0 && extension !== null) return this.sendUser(this.hostid, `|error|You cannot extend on day 0.`);
 		if (this.timer) this.setDeadline(0);
 		if (extension === null) {
-			if (!isNaN(this.hammerCount)) this.hammerCount = Math.floor(this.getRemainingPlayers().length / 2) + 1;
+			if (!isNaN(this.hammerCount)) this.hammerCount = Math.floor(this.getRemainingAliases().length / 2) + 1;
 			this.clearVotes();
 		}
 		this.phase = 'day';
@@ -1032,7 +1032,7 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 			this.sendRoom(`Plurality is on ${this.getPlayer(hasPlurality)?.name || 'No Vote'}`);
 		}
 		if (!early && !initial) this.sendRoom(`|raw|<div class="infobox">${this.voteBox()}</div>`);
-		if (initial && !isNaN(this.hammerCount)) this.hammerCount = Math.floor(this.getRemainingPlayers().length / 2) + 1;
+		if (initial && !isNaN(this.hammerCount)) this.hammerCount = Math.floor(this.getRemainingAliases().length / 2) + 1;
 		this.updatePlayers();
 	}
 
@@ -1096,21 +1096,21 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 		voter.lastVote = Date.now();
 
 		const name = voter.voting === 'novote' ? 'No Vote' : target?.getDisplayName();
-		const voterKey = voter.anon ? voter.aliasid : voter.id;
-		const targetKey = target ? (target.anon ? target.aliasid : target.id) : null;
+		const voterKey = voter.getNameId();
+		const targetKey = target ? target.getNameId() : null;
 		const voteKeys = targetKey ? [voterKey, targetKey] : [voterKey];
 
 		if (previousVote) {
 			const previousName = previousVote === 'novote' ? 'No Vote' : this.getPlayerByAlias(previousVote)?.getDisplayName();
 			const voteMessage = `${voter.getDisplayName()} has shifted their vote from ${previousName} to ${name}`;
 			this.sendTimestamp(voteMessage);
-			this.recordMessage(`*${voteMessage}*`, voteKeys, voter.anon ? voter.alias : voter.safeName);
+			this.recordMessage(`*${voteMessage}*`, voteKeys, voter.getDisplayName());
 		} else {
 			const voteMessage = name === 'No Vote' ?
 				`${voter.getDisplayName()} has abstained from voting.` :
 				`${voter.getDisplayName()} has voted ${name}.`;
 			this.sendTimestamp(voteMessage);
-			this.recordMessage(`*${voteMessage}*`, voteKeys, voter.anon ? voter.alias : voter.safeName);
+			this.recordMessage(`*${voteMessage}*`, voteKeys, voter.getDisplayName());
 		}
 
 		this.hasPlurality = null;
@@ -1174,10 +1174,10 @@ const unvoteMessage = voter.voting === 'novote' ?
 				`${voter.getDisplayName()} is no longer abstaining from voting.` :
 				`${voter.getDisplayName()} has unvoted ${target?.getDisplayName()}.`;
 			this.sendTimestamp(unvoteMessage);
-			const voterKey = voter.anon ? voter.aliasid : voter.id;
-			const targetKey = target ? (target.anon ? target.aliasid : target.id) : null;
+			const voterKey = voter.getNameId();
+			const targetKey = target ? target.getNameId() : null;
 			const voteKeys = targetKey ? [voterKey, targetKey] : [voterKey];
-			this.recordMessage(`*${unvoteMessage}*`, voteKeys, voter.anon ? voter.alias : voter.safeName);
+			this.recordMessage(`*${unvoteMessage}*`, voteKeys, voter.getDisplayName());
 		}
 		voter.voting = '';
 		voter.lastVote = Date.now();
@@ -1209,7 +1209,7 @@ const unvoteMessage = voter.voting === 'novote' ?
 		const plur = this.getPlurality();
 		const self = this.getPlayer(userid);
 
-		for (const key of this.getRemainingPlayers().map(p => p.getNameId()).concat((this.enableNV ? ['novote' as ID] : []))) {
+		for (const key of this.getRemainingAliases().map(p => p.getNameId()).concat((this.enableNV ? ['novote' as ID] : []))) {
 			const votes = this.votes[key];
 			const player = this.getPlayerByAlias(key);
 			buf += `<p style="font-weight:bold">${votes?.count || 0}${plur === key ? '*' : ''} `;
@@ -1490,7 +1490,7 @@ const unvoteMessage = voter.voting === 'novote' ?
 	}
 
 	getRemainingAliases() {
-		return [...new Set(this.getRemainingPlayers().map(player => player.alias).filter((alias): alias is string => alias !== null))].sort();
+		return [...new Set(this.getRemainingPlayers().map(player => player.alias).filter((alias): alias is string => alias !== null))].sort().map(alias => this.getPlayerByAlias(toID(alias))).filter(alias => alias !== null);
 	}
 
 	getEliminatedPlayers() {
@@ -1967,7 +1967,6 @@ const unvoteMessage = voter.voting === 'novote' ?
 	}
 
 	setHydra(user: User, setting: boolean) {
-		// Fail if not an even number of players
 		if ((this.hydra) === setting) {
 			return this.sendUser(user, `|error|Game is already ${setting ? 'a Hydra' : 'not a Hydra'}.`);
 		}
@@ -2145,8 +2144,8 @@ const unvoteMessage = voter.voting === 'novote' ?
 
 		if (player.getAnonymized()) {
 			if (message.startsWith("!")) return "You cannot send commands.";
-			this.recordMessage(message, player.aliasid, player.alias);
-			this.room.add(`|c:|${Date.now() / 1000}|${player.alias}|${message}`).update();
+			this.recordMessage(message, player.getNameId(), player.getDisplayName());
+			this.room.add(`|c:|${Date.now() / 1000}| ${player.alias}|${message}`).update();
 			return ``;
 		}
 
@@ -2232,7 +2231,6 @@ export const pages: Chat.PageTable = {
 		const isPlayer = game.getPlayer(user.id);
 		const isHost = user.id === game.hostid || game.cohostids.includes(user.id);
 		const players = game.getRemainingPlayers();
-		const aliases = game.getRemainingAliases();
 		this.title = game.title;
 		let buf = `<div class="pad broadcast-blue">`;
 		buf += `<button class="button" name="send" value="/join view-mafia-${room.roomid}" style="float:left"><i class="fa fa-refresh"></i> Refresh</button>`;
@@ -2744,6 +2742,15 @@ export const commands: Chat.ChatCommands = {
 			const game = this.requireGame(Mafia);
 			if (game.hostid !== user.id && !game.cohostids.includes(user.id)) this.checkCan('mute', null, room);
 			const action = toID(target);
+
+			if (game.started) {
+				throw new Chat.ErrorMessage(`You can't ${action === 'on' ? 'enable' : 'disable'} Hydra because the game has already started.`);
+			}
+
+			if (game.players.length % 2 !== 0) {
+				throw new Chat.ErrorMessage(`You can't play Hydra with an odd amount of players.`);
+			}
+
 			if (this.meansYes(action)) {
 				game.setHydra(user, true);
 			} else if (this.meansNo(action)) {
@@ -3678,7 +3685,7 @@ export const commands: Chat.ChatCommands = {
 			if (this.broadcasting) {
 				game.sendPlayerList();
 			} else {
-				const players = game.getRemainingPlayers();
+				const players = game.getRemainingAliases();
 				this.sendReplyBox(`Players (${players.length}): ${players.map(p => p.getDisplayName()).sort().join(', ')}`);
 			}
 		},
