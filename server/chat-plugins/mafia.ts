@@ -1406,6 +1406,10 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 		return this.players.filter(player => !player.isEliminated());
 	}
 
+	getRemainingAliases() {
+		return [...new Set(this.getRemainingPlayers().map(player => player.alias).filter((alias): alias is string => alias !== null))].sort();
+	}
+
 	getEliminatedPlayers() {
 		return this.players.filter(player => player.isEliminated()).sort((a, b) => a.eliminationOrder - b.eliminationOrder);
 	}
@@ -1733,7 +1737,7 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 	}
 
 	sendPlayerList() {
-		this.room.add(`|c:|${(Math.floor(Date.now() / 1000))}|~|**Players (${this.getRemainingPlayers().length})**: ${this.getRemainingPlayers().map(p => p.getDisplayName()).sort().join(', ')}`).update();
+		this.room.add(`|c:|${(Math.floor(Date.now() / 1000))}|~|**Players (${this.getRemainingAliases().length})**: ${this.getRemainingAliases().sort().join(', ')}`).update();
 	}
 
 	updatePlayers() {
@@ -2137,6 +2141,7 @@ export const pages: Chat.PageTable = {
 		const isPlayer = game.getPlayer(user.id);
 		const isHost = user.id === game.hostid || game.cohostids.includes(user.id);
 		const players = game.getRemainingPlayers();
+		const aliases = game.getRemainingAliases();
 		this.title = game.title;
 		let buf = `<div class="pad broadcast-blue">`;
 		buf += `<button class="button" name="send" value="/join view-mafia-${room.roomid}" style="float:left"><i class="fa fa-refresh"></i> Refresh</button>`;
@@ -2321,7 +2326,7 @@ export const pages: Chat.PageTable = {
 			buf += `<p>To set a deadline, use <strong>/mafia deadline [minutes]</strong>.<br />To clear the deadline use <strong>/mafia deadline off</strong>.</p><hr/></details></p>`;
 			buf += `<p><details><summary class="button" style="text-align:left; display:inline-block">Player Options</summary>`;
 			buf += `<h3>Player Options</h3>`;
-			for (const player of game.getRemainingPlayers()) {
+			for (const player of game.getRemainingAliases().map(alias => game.getPlayerByAlias(alias))) {
 				buf += `<p><details><summary class="button" style="text-align:left; display:inline-block"><span style="font-weight:bold;">`;
 				buf += `${player.safeName} (${player.role ? player.getStylizedRole(true) : ''})`;
 				buf += game.voteModifiers[player.id] !== undefined ? `(votes worth ${game.getVoteValue(player)})` : '';
