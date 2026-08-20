@@ -967,7 +967,8 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 				}
 				if (p.hydra && p.partnerid) {
 					const partner = Users.get(p.partnerid);
-					partner.role = role;
+					const partnerp = this.getPlayer((p.partnerid));
+					if (partnerp) partnerp.role = role;
 					if (partner?.connected) {
 						partner.send(`>${this.room.roomid}\n|notify|Your role is ${role.safeName}. For more details of your role, check your Role PM.`);
 					}
@@ -2336,7 +2337,7 @@ export const pages: Chat.PageTable = {
 			let previousActionsPL = `<br/>`;
 			if (role) {
 				buf += `<h3>${isPlayer.safeName}, you are a ${isPlayer.getStylizedRole()}.</h3>`;
-				buf += isPlayer.hydra && isPlayer.partnerid ? `<h3>Your Hydra partner is ${game.getPlayer(isPlayer.partnerid)}.</h3>` : ``;
+				buf += isPlayer.hydra && isPlayer.partnerid ? `<h3>Your Hydra partner is ${game.getPlayer(isPlayer.partnerid)?.getDisplayName()}.</h3>` : ``;
 				buf += isPlayer.getAnonymized() ? `<h3>Your alias is ${isPlayer.getDisplayName()}.</h3>` : ``;
 				if (!['town', 'solo'].includes(role.alignment)) {
 					buf += `<p><span style="font-weight:bold">Partners</span>: ${game.getPartners(role.alignment, isPlayer)}</p>`;
