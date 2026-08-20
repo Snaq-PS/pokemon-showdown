@@ -2165,6 +2165,13 @@ const unvoteMessage = voter.voting === 'novote' ?
 			}
 		}
 
+		if (player.darkness) {
+			if (message.startsWith("!")) return "You cannot send commands.";
+			this.recordMessage(message, player.getNameId(), player.getDisplayName());
+			this.room.add(`|c:|${Date.now() / 1000}| DARKNESS}|${message}`).update();
+			return ``;
+		}
+
 		if (player.getAnonymized()) {
 			if (message.startsWith("!")) return "You cannot send commands.";
 			this.recordMessage(message, player.getNameId(), player.getDisplayName());
