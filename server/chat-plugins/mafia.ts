@@ -98,6 +98,7 @@ interface MafiaMessage {
 	message: string;
 	keys: ID[];
 	name: string;
+	staffName?: string;
 	timestamp: string;
 	order: number;
 }
@@ -548,7 +549,7 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 		}
 	}
 
-	getIsoTarget(target: string) {
+	getIsoTarget(target: string, revealRealName = false) {
 		const targetID = toID(target);
 		if (targetID === this.hostid) {
 			return { key: this.hostid, name: this.host };
@@ -558,15 +559,20 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 			return { key: targetID, name: this.cohosts[cohostIndex] };
 		}
 
-		const player = this.anon ? this.getPlayerByAlias(targetID) : this.getPlayer(targetID);
+		const player = this.anon || this.hydra ? this.getPlayerByAlias(targetID) : this.getPlayer(targetID);
 		if (!player) return null;
+		const realNames = player.hydra && player.partnerid ?
+			[player, this.getPlayer(player.partnerid)].filter((p): p is MafiaPlayer => !!p).map(p => p.safeName) :
+			[player.safeName];
+		const displayName = `<username>${player.getDisplayName()}</username>`;
 		return {
 			key: player.getNameId(),
-			name: player.getDisplayName(),
+			name: revealRealName && player.getAnonymized() ?
+				`${displayName} (${realNames.map(name => `<username>${name}</username>`).join(', ')})` : displayName,
 		};
 	}
 
-	recordMessage(message: string, keys: ID | ID[], name: string) {
+	recordMessage(message: string, keys: ID | ID[], name: string, staffName?: string) {
 		const order = Date.now();
 		const codeMatch = message.match(/^[\/]?code(?:\s|$)/i) || message.match(/^!code(?:\s|$)/i);
 		const content = codeMatch ? message.slice(codeMatch[0].length) : message;
@@ -574,6 +580,7 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 			message: codeMatch ? Chat.getReadmoreBlock(`Code\n${content}`, true, 1) : formatText(message, false, true),
 			keys: Array.isArray(keys) ? keys : [keys],
 			name,
+			staffName,
 			timestamp: `[${new Date(order).toTimeString().slice(0, 8)}]`,
 			order,
 		});
@@ -590,12 +597,12 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 		});
 	}
 
-	createIso(targets: { key: ID, name: string }[]) {
+	createIso(targets: { key: ID, name: string }[], revealRealNames = false) {
 		const keys = new Set(targets.map(target => target.key));
 		const messages = this.messages
 			.filter(message => !message.keys.length || message.keys.some(key => keys.has(key)))
 			.sort((a, b) => a.order - b.order);
-		let output = `<details open><summary><strong>ISO: ${targets.map(target => `<username>${target.name}</username>`).join(', ')}</strong></summary>`;
+		let output = `<details open><summary><strong>ISO: ${targets.map(target => target.name).join(', ')}</strong></summary>`;
 		if (!messages.length) {
 			return output + `<em>No messages.</em></details>`;
 		}
@@ -603,7 +610,7 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 			if (!message.keys.length) {
 				output += `<br />${message.timestamp} ${message.message}<br />`;
 			} else {
-				output += `${message.timestamp} <strong><username>${message.name}:</username></strong> ${message.message}<br />`;
+				output += `${message.timestamp} <strong><username>${revealRealNames && message.staffName ? message.staffName : message.name}:</username></strong> ${message.message}<br />`;
 			}
 		}
 		return output + `</details>`;
@@ -2144,7 +2151,7 @@ const unvoteMessage = voter.voting === 'novote' ?
 
 		if (player.getAnonymized()) {
 			if (message.startsWith("!")) return "You cannot send commands.";
-			this.recordMessage(message, player.getNameId(), player.getDisplayName());
+			this.recordMessage(message, player.getNameId(), player.getDisplayName(), player.safeName);
 			this.room.add(`|c:|${Date.now() / 1000}| ${player.alias}|${message}`).update();
 			return ``;
 		}
@@ -3605,16 +3612,22 @@ export const commands: Chat.ChatCommands = {
 		],
 
 		iso: 'isolate',
-		isolate(target, room, user) {
+		staffiso: 'isolate',
+		siso: 'isolate',
+		isolate(target, room, user, connection, cmd) {
 			room = this.requireRoom();
 			const game = this.requireGame(Mafia);
 			if (!game.started) throw new Chat.ErrorMessage(`The game hasn't started yet.`);
-			if (!target) return this.parse('/help mafia iso');
+			const staffIso = cmd === 'staffiso' || cmd === 'siso';
+			if (staffIso && game.hostid !== user.id && !game.cohostids.includes(user.id)) {
+				this.checkCan('mute', null, room);
+			}
+			if (!target) return this.parse(`/help mafia ${staffIso ? 'staffiso' : 'iso'}`);
 
-			if (game.hostid === user.id || game.cohostids.includes(user.id)) {
+			if (!staffIso && (game.hostid === user.id || game.cohostids.includes(user.id))) {
 				this.broadcastMessage = this.message.toLowerCase().replace(/[^a-z0-9\s!,]/g, '');
 			}
-			if (!this.runBroadcast()) return false;
+			if (!staffIso && !this.runBroadcast()) return false;
 
 			const targetNames = target.split(',').map(name => name.trim()).filter(Boolean);
 			if (!targetNames.length || targetNames.length > 5) {
@@ -3623,15 +3636,18 @@ export const commands: Chat.ChatCommands = {
 
 			const targets: { key: ID, name: string }[] = [];
 			for (const targetName of targetNames) {
-				const isoTarget = game.getIsoTarget(targetName);
+				const isoTarget = game.getIsoTarget(targetName, staffIso);
 				if (!isoTarget) throw new Chat.ErrorMessage(`${targetName} is not a valid iso target.`);
 				if (!targets.some(target => target.key === isoTarget.key)) targets.push(isoTarget);
 			}
-			this.sendReplyBox(game.createIso(targets));
+			this.sendReplyBox(game.createIso(targets, staffIso));
 		},
 		isohelp: [
 			`/mafia iso [player1, player2, ...] - Shows the selected players' messages from the game. In an anonymous game, use aliases; real usernames do not work.`,
 			`!mafia iso [player1, player2, ...] - Broadcasts the selected players' messages.`,
+		],
+		staffisohelp: [
+			`/mafia staffiso [player1, player2, ...] - Shows the selected players' messages with real usernames beside anonymous aliases. Requires host % @ # ~`,
 		],
 
 		forcevote(target, room, user) {
