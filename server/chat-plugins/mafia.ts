@@ -1063,6 +1063,7 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 
 	vote(voter: MafiaPlayer, targetId: ID) {
 		voter = this.getPlayerByAlias(voter.getNameId()) || voter;
+		console.log(voter);
 		if (!this.votingEnabled) return this.sendUser(voter, `|error|Voting is not allowed.`);
 		if (this.phase !== 'day') return this.sendUser(voter, `|error|You can only vote during the day.`);
 		if (!voter || (voter.isEliminated() && !voter.isSpirit())) return;
@@ -1972,11 +1973,11 @@ const unvoteMessage = voter.voting === 'novote' ?
 		// Else If Anon: generate aliases.
 		// If Darkness: clouds
 
-		const prefix = this.darkness ? " " : this.hydra ? "[Hydra]" : this.anon ? "[Anon]" : " ";
+		const prefix = this.hydra ? "[Hydra]" : this.anon ? "[Anon]" : " ";
 
-		const shuffledPlayers = Utils.shuffle(this.players);
+		let shuffledPlayers = Utils.shuffle(this.players).filter(player => player.hydra && !player.partnerid);
 
-		for (let i = 0; i < shuffledPlayers.filter(player => player.hydra && !player.partnerid).length; i++) {
+		for (let i = 0; i < shuffledPlayers.length; i++) {
 			if (i % 2 === 0) {
 				const randPoke = Utils.randomElement(this.getPokemonNamePool().filter(name => !this.getPlayerByAlias(toID(name))));
 				shuffledPlayers.filter(player => player.hydra)[i].alias = `${prefix} ${randPoke}`;
@@ -1988,8 +1989,9 @@ const unvoteMessage = voter.voting === 'novote' ?
 				shuffledPlayers.filter(player => player.hydra)[i].partnerid = shuffledPlayers.filter(player => player.hydra)[i - 1].id;
 			}
 		}
+		shuffledPlayers = Utils.shuffle(this.players).filter(player => player.anon && !player.hydra && !player.aliasid);
 
-		for (let player of shuffledPlayers.filter(player => player.anon && !player.hydra && player.aliasid)) {
+		for (let player of shuffledPlayers) {
 			let randPoke = Utils.randomElement(this.getPokemonNamePool().filter(name => !this.getPlayerByAlias(toID(name))));
 			player.alias = `${prefix} ${randPoke}`;
 			player.aliasid = toID(randPoke);
@@ -2173,7 +2175,7 @@ const unvoteMessage = voter.voting === 'novote' ?
 		if (player.darkness) {
 			if (message.startsWith("!")) return "You cannot send commands.";
 			this.recordMessage(message, player.getNameId(), player.getDisplayName());
-			this.room.add(`|c:|${Date.now() / 1000}| DARKNESS|${message}`).update();
+			this.room.add(`|c:|${Date.now() / 1000}| ████████|${message}`).update();
 			return ``;
 		}
 
@@ -2349,7 +2351,7 @@ export const pages: Chat.PageTable = {
 			let previousActionsPL = `<br/>`;
 			if (role) {
 				buf += `<h3>${isPlayer.safeName}, you are a ${isPlayer.getStylizedRole()}.</h3>`;
-				buf += isPlayer.hydra && isPlayer.partnerid ? `<h3>Your Hydra partner is ${game.getPlayer(isPlayer.partnerid)?.getDisplayName()}.</h3>` : ``;
+				buf += isPlayer.hydra && isPlayer.partnerid ? `<h3>Your Hydra partner is ${game.getPlayer(isPlayer.partnerid)?.safeName}.</h3>` : ``;
 				buf += isPlayer.getAnonymized() ? `<h3>Your alias is ${isPlayer.getDisplayName()}.</h3>` : ``;
 				if (!['town', 'solo'].includes(role.alignment)) {
 					buf += `<p><span style="font-weight:bold">Partners</span>: ${game.getPartners(role.alignment, isPlayer)}</p>`;
