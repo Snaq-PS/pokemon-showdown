@@ -603,6 +603,12 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 		});
 	}
 
+	formatIsoSpeaker(message: MafiaMessage, revealRealNames: boolean) {
+		const displayName = `<username>${message.name}</username>`;
+		if (!revealRealNames || !message.staffName || message.staffName === message.name) return displayName;
+		return `${displayName} (<username>${message.staffName}</username>)`;
+	}
+
 	createIso(targets: { key: ID, name: string }[], revealRealNames = false, title?: string) {
 		const keys = new Set(targets.map(target => target.key));
 		const messages = this.messages
@@ -616,7 +622,7 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 			if (!message.keys.length) {
 				output += `<br />${message.timestamp} ${message.message}<br />`;
 			} else {
-				output += `${message.timestamp} <strong><username>${revealRealNames && message.staffName ? message.staffName : message.name}:</username></strong> ${message.message}<br />`;
+				output += `${message.timestamp} <strong>${this.formatIsoSpeaker(message, revealRealNames)}:</strong> ${message.message}<br />`;
 			}
 		}
 		return output + `</details>`;
@@ -2236,9 +2242,7 @@ const unvoteMessage = voter.voting === 'novote' ?
 
 	end() {
 		if (this.usedAnon || this.usedDarkness || this.usedHydra) {
-			const staffIso = `|raw|<div class="infobox">${this.createStaffIso()}</div>`;
-			this.room.sendMods(staffIso);
-			this.room.roomlog(staffIso);
+			this.room.add(`|raw|<div class="infobox">${this.createStaffIso()}</div>`).update();
 		}
 		this.setEnded();
 		this.sendHTML(this.roomWindow());
@@ -3675,6 +3679,9 @@ export const commands: Chat.ChatCommands = {
 			const staffIso = cmd === 'staffiso' || cmd === 'siso';
 			if (staffIso && game.hostid !== user.id && !game.cohostids.includes(user.id)) {
 				this.checkCan('mute', null, room);
+				if (game.getPlayer(user.id)) {
+					throw new Chat.ErrorMessage(`You cannot use staffiso while you are in the game.`);
+				}
 			}
 			if (!target) return this.parse(`/help mafia ${staffIso ? 'staffiso' : 'iso'}`);
 
@@ -3703,7 +3710,7 @@ export const commands: Chat.ChatCommands = {
 			`!mafia iso [player1, player2, ...] - Broadcasts the selected players' messages.`,
 		],
 		staffisohelp: [
-			`/mafia staffiso [player1, player2, ...] - Shows the selected players' messages with real usernames beside anonymous aliases. Requires host % @ # ~`,
+			`/mafia staffiso [player1, player2, ...] - Shows the selected players' messages with real usernames beside anonymous aliases. Staff players cannot use this command; hosts and cohosts can.`,
 		],
 
 		forcevote(target, room, user) {
