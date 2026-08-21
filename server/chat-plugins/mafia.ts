@@ -1871,7 +1871,7 @@ const unvoteMessage = voter.voting === 'novote' ?
 	}
 
 	sendPlayerList() {
-		this.room.add(`|c:|${(Math.floor(Date.now() / 1000))}|~|**Players (${this.getRemainingAliases().length})**: ${this.getRemainingAliases().sort().join(', ')}`).update();
+		this.room.add(`|c:|${(Math.floor(Date.now() / 1000))}|~|**Players (${this.getRemainingSlots().length})**: ${this.getRemainingSlots().map(slot => slot.getDisplayName()).sort().join(', ')}`).update();
 	}
 
 	updatePlayers() {
