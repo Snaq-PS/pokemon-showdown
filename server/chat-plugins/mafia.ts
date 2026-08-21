@@ -423,6 +423,9 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 	anon: boolean;
 	darkness: boolean;
 	hydra: boolean;
+	usedAnon: boolean;
+	usedDarkness: boolean;
+	usedHydra: boolean;
 
 	enableNV: boolean;
 	voteLock: boolean;
@@ -478,6 +481,9 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 		this.anon = false;
 		this.darkness = false;
 		this.hydra = false;
+		this.usedAnon = false;
+		this.usedDarkness = false;
+		this.usedHydra = false;
 
 		this.enableNV = true;
 		this.voteLock = false;
@@ -597,12 +603,18 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 		});
 	}
 
-	createIso(targets: { key: ID, name: string }[], revealRealNames = false) {
+	formatIsoSpeaker(message: MafiaMessage, revealRealNames: boolean) {
+		const displayName = `<username>${message.name}</username>`;
+		if (!revealRealNames || !message.staffName || message.staffName === message.name) return displayName;
+		return `${displayName} (<username>${message.staffName}</username>)`;
+	}
+
+	createIso(targets: { key: ID, name: string }[], revealRealNames = false, title?: string) {
 		const keys = new Set(targets.map(target => target.key));
 		const messages = this.messages
 			.filter(message => !message.keys.length || message.keys.some(key => keys.has(key)))
 			.sort((a, b) => a.order - b.order);
-		let output = `<details open><summary><strong>ISO: ${targets.map(target => target.name).join(', ')}</strong></summary>`;
+		let output = `<details open><summary><strong>${title || `ISO: ${targets.map(target => target.name).join(', ')}`}</strong></summary>`;
 		if (!messages.length) {
 			return output + `<em>No messages.</em></details>`;
 		}
@@ -610,10 +622,15 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 			if (!message.keys.length) {
 				output += `<br />${message.timestamp} ${message.message}<br />`;
 			} else {
-				output += `${message.timestamp} <strong><username>${revealRealNames && message.staffName ? message.staffName : message.name}:</username></strong> ${message.message}<br />`;
+				output += `${message.timestamp} <strong>${this.formatIsoSpeaker(message, revealRealNames)}:</strong> ${message.message}<br />`;
 			}
 		}
 		return output + `</details>`;
+	}
+
+	createStaffIso() {
+		const keys = new Set(this.messages.flatMap(message => message.keys));
+		return this.createIso([...keys].map(key => ({ key, name: '' })), true, 'Staff ISO');
 	}
 
 	leave(user: User) {
@@ -947,6 +964,9 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 			}
 		}
 		this.started = true;
+		this.usedAnon = this.anon;
+		this.usedDarkness = this.darkness;
+		this.usedHydra = this.hydra;
 		this.sendDeclare(`The game of ${this.title} is starting!`);
 		// Mafia#played gets set in distributeRoles
 		this.distributeRoles();
@@ -1131,13 +1151,13 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 			const previousName = previousVote === 'novote' ? 'No Vote' : this.getPlayerByAlias(previousVote)?.getDisplayName();
 			const voteMessage = `${voter.getDisplayName()} has shifted their vote from ${previousName} to ${name}`;
 			this.sendTimestamp(voteMessage);
-			this.recordMessage(`*${voteMessage}*`, voteKeys, voter.getDisplayName());
+			this.recordMessage(`*${voteMessage}*`, voteKeys, voter.getDisplayName(), voter.safeName);
 		} else {
 			const voteMessage = name === 'No Vote' ?
 				`${voter.getDisplayName()} has abstained from voting.` :
 				`${voter.getDisplayName()} has voted ${name}.`;
 			this.sendTimestamp(voteMessage);
-			this.recordMessage(`*${voteMessage}*`, voteKeys, voter.getDisplayName());
+			this.recordMessage(`*${voteMessage}*`, voteKeys, voter.getDisplayName(), voter.safeName);
 		}
 
 		this.hasPlurality = null;
@@ -1204,7 +1224,7 @@ const unvoteMessage = voter.voting === 'novote' ?
 			const voterKey = voter.getNameId();
 			const targetKey = target ? target.getNameId() : null;
 			const voteKeys = targetKey ? [voterKey, targetKey] : [voterKey];
-			this.recordMessage(`*${unvoteMessage}*`, voteKeys, voter.getDisplayName());
+			this.recordMessage(`*${unvoteMessage}*`, voteKeys, voter.getDisplayName(), voter.safeName);
 		}
 		voter.voting = '';
 		voter.lastVote = Date.now();
@@ -2003,6 +2023,7 @@ const unvoteMessage = voter.voting === 'novote' ?
 			return this.sendUser(user, `|error|Game is already ${setting ? 'a Hydra' : 'not a Hydra'}.`);
 		}
 		this.hydra = setting;
+		if (setting && this.started) this.usedHydra = true;
 		this.sendDeclare(`The game was set to be ${setting ? 'a Hydra' : 'not a Hydra'}.`);
 
 		for (let player of Utils.shuffle(this.players)) {
@@ -2017,6 +2038,7 @@ const unvoteMessage = voter.voting === 'novote' ?
 			return this.sendUser(user, `|error|Game is already ${setting ? 'Anon' : 'not Anon'}.`);
 		}
 		this.anon = setting;
+		if (setting && this.started) this.usedAnon = true;
 		this.sendDeclare(`The game was set to be ${setting ? 'Anon' : 'not Anon'}.`);
 
 		for (let player of Utils.shuffle(this.players)) {
@@ -2031,6 +2053,7 @@ const unvoteMessage = voter.voting === 'novote' ?
 			return this.sendUser(user, `|error|Game is already shrouded ${setting ? 'in Darkness' : 'not in Darkness'}.`);
 		}
 		this.darkness = setting;
+		if (setting && this.started) this.usedDarkness = true;
 
 		this.sendDeclare(`The game was set to be shrouded ${setting ? 'in Darkness' : 'not in Darkness'}.`);
 
@@ -2174,7 +2197,7 @@ const unvoteMessage = voter.voting === 'novote' ?
 
 		if (player.darkness) {
 			if (message.startsWith("!")) return "You cannot send commands.";
-			this.recordMessage(message, player.getNameId(), player.getDisplayName());
+			this.recordMessage(message, player.getNameId(), player.getDisplayName(), player.safeName);
 			this.room.add(`|c:|${Date.now() / 1000}| ████████|${message}`).update();
 			return ``;
 		}
@@ -2218,6 +2241,9 @@ const unvoteMessage = voter.voting === 'novote' ?
 	}
 
 	end() {
+		if (this.usedAnon || this.usedDarkness || this.usedHydra) {
+			this.room.add(`|raw|<div class="infobox">${this.createStaffIso()}</div>`).update();
+		}
 		this.setEnded();
 		this.sendHTML(this.roomWindow());
 		this.updatePlayers();
@@ -3653,6 +3679,9 @@ export const commands: Chat.ChatCommands = {
 			const staffIso = cmd === 'staffiso' || cmd === 'siso';
 			if (staffIso && game.hostid !== user.id && !game.cohostids.includes(user.id)) {
 				this.checkCan('mute', null, room);
+				if (game.getPlayer(user.id)) {
+					throw new Chat.ErrorMessage(`You cannot use staffiso while you are in the game.`);
+				}
 			}
 			if (!target) return this.parse(`/help mafia ${staffIso ? 'staffiso' : 'iso'}`);
 
@@ -3681,7 +3710,7 @@ export const commands: Chat.ChatCommands = {
 			`!mafia iso [player1, player2, ...] - Broadcasts the selected players' messages.`,
 		],
 		staffisohelp: [
-			`/mafia staffiso [player1, player2, ...] - Shows the selected players' messages with real usernames beside anonymous aliases. Requires host % @ # ~`,
+			`/mafia staffiso [player1, player2, ...] - Shows the selected players' messages with real usernames beside anonymous aliases. Staff players cannot use this command; hosts and cohosts can.`,
 		],
 
 		forcevote(target, room, user) {
