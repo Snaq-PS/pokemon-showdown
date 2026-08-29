@@ -19,11 +19,15 @@ export interface SpeciesData extends Partial<Species> {
 	baseStats: StatsTable;
 	eggGroups: string[];
 	weightkg: number;
-
+	
+	/**
+	 * An object for storing untyped data, for mods to use.
+	 */
 	m: {
 		[key: string]: any,
 	};
 }
+
 export interface CosmeticFormeData {
 	isCosmeticForme: boolean;
 	name: string;
@@ -284,13 +288,6 @@ export class Species extends BasicEffect implements Readonly<BasicEffect & Speci
 	 * National Dex Tier. The Pokemon's location in the Smogon National Dex tier system.
 	 */
 	readonly natDexTier: TierTypes.Singles | TierTypes.Other;
-
-	/**
-	 * An object for storing untyped data, for mods to use.
-	 */
-	m: {
-		[key: string]: any,
-	};
 
 	constructor(data: AnyObject) {
 		super(data);
