@@ -1,0 +1,73 @@
+{
+  "seedstrom": {
+    "level": 85,
+    "sets": [
+      {
+        "role": "Bulky Support",
+        "movepool": ["Sappy Seed", "Storm Swing", "Strength Sap", "Defog"],
+        "abilities": ["Delta Stream"],
+        "teraTypes": [],
+        "items": ["Heavy-Duty Boots"]
+      },
+      {
+        "role": "Bulky Attacker",
+        "movepool": ["Sappy Seed", "Storm Swing", "Earthquake", "Defog"],
+        "abilities": ["Delta Stream"],
+        "teraTypes": [],
+        "items": ["Heavy-Duty Boots"]
+      }
+    ]
+  },
+  "gravitart": {
+    "level": 85,
+    "sets": [
+      {
+        "role": "G Terrain Setter",
+        "movepool": ["Grassy Glide", "Jaw Lock", "U-Turn", "Apple Acid", "Synthesis"],
+        "abilities": ["Grassy Surge"],
+        "teraTypes": [],
+        "items": ["Terrain Extender"]
+      },
+      {
+        "role": "Slow Attacker",
+        "movepool": ["Grav Apple", "U-Turn", "Heat Crash", "Pursuit", "Heavy Slam", "Dragon Rush"],
+        "abilities": ["Falling Fighter"],
+        "teraTypes": [],
+        "items": ["Choice Band"]
+      },
+      {
+        "role": "G Terrain Attacker",
+        "movepool": ["Grassy Glide", "Draco Meteor", "Sucker Punch", "U-Turn"],
+        "abilities": ["Grassy Surge"],
+        "teraTypes": [],
+        "items": ["Life Orb"]
+      }
+    ]
+  },
+  "harvesta": {
+    "level": 85,
+    "sets": [
+      {
+        "role": "Bulky SubSeed",
+        "movepool": ["Fire Lash", "Leech Seed", "Protect", "Substitute"],
+        "abilities": ["Harvest"],
+        "teraTypes": ["Steel"],
+        "items": ["Sitrus Berry"]
+      },
+      {
+        "role": "Recovery Pivot",
+        "movepool": ["Flare Blitz", "Leaf Blade", "U-Turn", "Synthesis"],
+        "abilities": ["Harvest"],
+        "teraTypes": ["Steel"],
+        "items": ["Sitrus Berry"]
+      },
+      {
+        "role": "WispSeed",
+        "movepool": ["Flare Blitz", "Protect", "Leech Seed", "Will-O-Wisp"],
+        "abilities": ["Harvest"],
+        "teraTypes": ["Water"],
+        "items": ["Sitrus Berry"]
+      }
+    ]
+  }
+}
