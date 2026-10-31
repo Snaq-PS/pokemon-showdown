@@ -4074,7 +4074,6 @@ export const Learnsets: import('../../../sim/dex-species').ModdedLearnsetDataTab
 			wish: ["9L1"],
 		},
 	},
-	// Prompt 15 additions from the previous package
 	theroaringknight: {
 		learnset: {
 			agility: ["9L1"],
