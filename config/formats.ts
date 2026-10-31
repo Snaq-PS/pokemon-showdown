@@ -4048,6 +4048,40 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			this.add(`raw|Anyone who is there can help create a new set for a random mon, changing moves, abilities, stats, and even custom formes.`);
 		},
 	},
+	{
+		name: "[Gen 9] Halloween Calendar",
+		desc: `The Pokémon submitted to the Halloween Calender, now playable!`,
+		mod: 'halloween',
+		ruleset: ['Standard', 'Evasion Abilities Clause', 'Sleep Moves Clause', '!Sleep Clause Mod', 'Terastal Clause', 'Data Preview'],
+		banlist: ['Uber', 'AG', 'Arena Trap', 'Moody', 'Shadow Tag', 'King\'s Rock', 'Razor Fang', 'Baton Pass', 'Last Respects', 'Shed Tail', 'Tera Blast'],
+		onSwitchIn(pokemon) {
+			this.add('-start', pokemon, 'typechange', pokemon.species.types.join('/'), '[silent]');
+		},
+		onChangeSet(set) {
+			const original = this.dex.species.get(set.species);
+			const item = this.dex.toID(set.item);
+			const forme = item === 'princeshat' && original.baseSpecies === 'Swirlix' ? 'Swirlix-Hatted' :
+				item === 'goldenflower' && original.baseSpecies === 'Spritzee' ? 'Spritzee-Blossom' :
+				item === 'royalrazor' && original.baseSpecies === 'Pirouetch' ? 'Pirouetch-Revealed' :
+				item === 'shapemask' && original.baseSpecies === 'Ogerpon' ? 'Ogerpon-Shape' : null;
+			if (!forme) return;
+			if (forme === 'Spritzee-Blossom') {
+				if (set.gender === 'F') return ['Only a male Spritzee can use Golden Flower.'];
+				set.gender = 'M';
+				set.moves = set.moves.filter(move => this.dex.toID(move) !== 'nastyplot')
+					.map(move => this.dex.toID(move) === 'energyball' ? 'Jaroma' : move);
+			}
+			const target = this.dex.species.get(forme);
+			const previous = original.id === target.id ? this.dex.species.get(original.baseSpecies) : original;
+			const slot = (Object.keys(previous.abilities) as (keyof typeof previous.abilities)[])
+				.find(key => this.dex.toID(previous.abilities[key]) === this.dex.toID(set.ability));
+			const legalAbility = Object.values(target.abilities)
+				.some(ability => this.dex.toID(ability) === this.dex.toID(set.ability));
+			if (!legalAbility && slot !== undefined) set.ability = target.abilities[slot] || target.abilities[0];
+			set.species = target.name;
+			if (target.requiredTeraType) set.teraType = target.requiredTeraType;
+		},
+	},
 
 	// Randomized Metas
 	///////////////////////////////////////////////////////////////////
