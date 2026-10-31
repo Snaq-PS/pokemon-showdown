@@ -316,7 +316,6 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "OU",
 		doublesTier: "DOU",
 	},
-	// Prompt 15 additions from the previous package
 	theroaringknight: {
 		tier: "OU",
 		doublesTier: "DOU",
