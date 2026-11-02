@@ -1,0 +1,1605 @@
+{
+	"petmoddercyaneedle": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Flare Blitz", "First Impression", "Crunch", "Body Slam", "Slack Off"],
+				"abilities": ["Serene Grace"],
+				"items": ["Leftovers"]
+			}
+		]
+	},
+	"petmodderflareth13": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Flare Blitz", "First Impression", "Crunch", "Body Slam", "Slack Off"],
+				"abilities": ["Fluffy"],
+				"items": ["Leftovers"]
+			}
+		]
+	},
+	"petmodderzxgzxg": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Flare Blitz", "First Impression", "Crunch", "Body Slam", "Slack Off"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Leftovers"]
+			}
+		]
+	},
+	"petmodderretrosquad": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Flare Blitz", "First Impression", "Crunch", "Body Slam", "Slack Off"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Leftovers"]
+			}
+		]
+	},
+	"petmoddereggdude": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Draining Kiss", "Work Up", "Hyper Voice"],
+				"abilities": ["Magic Bounce"],
+				"items": ["Pixie Plate"]
+			}
+		]
+	},
+	"petmodderathenastrive9": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Draining Kiss", "Work Up", "Hyper Voice"],
+				"abilities": ["Fairy Aura"],
+				"items": ["Pixie Plate"]
+			}
+		]
+	},
+	"petmodderyvonneon": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Draining Kiss", "Work Up", "Hyper Voice"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Pixie Plate"]
+			}
+		]
+	},
+	"petmoddercchang21": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Draining Kiss", "Work Up", "Hyper Voice"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Pixie Plate"]
+			}
+		]
+	},
+	"petmoddercat111ca": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Draining Kiss", "Work Up", "Hyper Voice"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Pixie Plate"]
+			}
+		]
+	},
+	"petmoddermena": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Draining Kiss", "Work Up", "Hyper Voice"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Pixie Plate"]
+			}
+		]
+	},
+	"petmodderbubbytubby": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Draining Kiss", "Work Up", "Hyper Voice"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Pixie Plate"]
+			}
+		]
+	},
+	"petmodderno0bbattlerr": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Draining Kiss", "Work Up", "Hyper Voice"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Pixie Plate"]
+			}
+		]
+	},
+	"petmodderemikatana": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Draining Kiss", "Work Up", "Hyper Voice"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Pixie Plate"]
+			}
+		]
+	},
+	"petmodderorangesodapop": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Thunderbolt", "Ice Beam", "Aura Sphere"],
+				"abilities": ["Levitate"],
+				"items": ["Air Balloon"]
+			}
+		]
+	},
+	"petmoddermafusimp": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Thunderbolt", "Ice Beam", "Aura Sphere"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Air Balloon"]
+			},
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Dragon Claw", "Fire Fang", "Dual Wingbeat", "U-turn"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Draco Plate"]
+			}
+		]
+	},
+	"petmodderfailuretoxic": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Thunderbolt", "Ice Beam", "Aura Sphere"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Air Balloon"]
+			},
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Poltergeist", "U-turn", "Drain Punch"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Colbur Berry"]
+			}
+		]
+	},
+	"petmoddershunblight": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Thunderbolt", "Ice Beam", "Aura Sphere"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Air Balloon"]
+			}
+		]
+	},
+	"petmodderanaconja": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Dragon Claw", "Fire Fang", "Dual Wingbeat", "U-turn"],
+				"abilities": ["Shed Skin"],
+				"items": ["Draco Plate"]
+			}
+		]
+	},
+	"petmodderdragonpheonix333": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Dragon Claw", "Fire Fang", "Dual Wingbeat", "U-turn"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Draco Plate"]
+			}
+		]
+	},
+	"petmodderthehisuiregion": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Dragon Claw", "Fire Fang", "Dual Wingbeat", "U-turn"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Draco Plate"]
+			}
+		]
+	},
+	"petmodderdrag0n": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Dragon Claw", "Fire Fang", "Dual Wingbeat", "U-turn"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Draco Plate"]
+			}
+		]
+	},
+	"petmodderhappigoji": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Dragon Claw", "Fire Fang", "Dual Wingbeat", "U-turn"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Draco Plate"]
+			}
+		]
+	},
+	"petmodderaninjadude": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Poltergeist", "U-turn", "Drain Punch"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Colbur Berry"]
+			}
+		]
+	},
+	"petmodderbloatationdevice": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Poltergeist", "U-turn", "Drain Punch"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Colbur Berry"]
+			}
+		]
+	},
+	"petmoddersards": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Poltergeist", "U-turn", "Drain Punch"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Colbur Berry"]
+			}
+		]
+	},
+	"petmodderkeeganskymin4444": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Leaf Storm", "Dual Wingbeat", "Surf", "Poison Jab"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Eject Button"]
+			}
+		]
+	},
+	"petmodderdesktopini": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Leaf Storm", "Dual Wingbeat", "Surf", "Poison Jab"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Eject Button"]
+			}
+		]
+	},
+	"petmoddergoodchap": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Leaf Storm", "Dual Wingbeat", "Surf", "Poison Jab"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Eject Button"]
+			}
+		]
+	},
+	"petmodderawesomedoom82": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Leaf Storm", "Dual Wingbeat", "Surf", "Poison Jab"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Eject Button"]
+			}
+		]
+	},
+	"petmodderrawwood": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Leaf Storm", "Dual Wingbeat", "Surf", "Poison Jab"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Eject Button"]
+			}
+		]
+	},
+	"petmoddertdloriat": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Leaf Storm", "Dual Wingbeat", "Surf", "Poison Jab"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Eject Button"]
+			}
+		]
+	},
+	"petmodderserperiorgirl": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Leaf Storm", "Dual Wingbeat", "Surf", "Poison Jab"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Eject Button"]
+			}
+		]
+	},
+	"petmoddershadepied": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "U-turn", "Surf", "Wave Crash", "Earthquake"],
+				"abilities": ["Victory Star"],
+				"items": ["Leftovers"]
+			}
+		]
+	},
+	"petmoddergaboswampert": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "U-turn", "Surf", "Wave Crash", "Earthquake"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Leftovers"]
+			}
+		]
+	},
+	"petmoddervishyfishy": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "U-turn", "Surf", "Wave Crash", "Earthquake"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Leftovers"]
+			}
+		]
+	},
+	"petmoddergeorgetheduck": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "U-turn", "Surf", "Wave Crash", "Earthquake"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Leftovers"]
+			}
+		]
+	},
+	"petmoddergastrodoniscool93": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "U-turn", "Surf", "Wave Crash", "Earthquake"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Leftovers"]
+			}
+		]
+	},
+	"petmodderherring": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "U-turn", "Surf", "Wave Crash", "Earthquake"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Leftovers"]
+			}
+		]
+	},
+	"petmoddertanny89k": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "U-turn", "Surf", "Wave Crash", "Earthquake"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Leftovers"]
+			}
+		]
+	},
+	"petmoddershreyashhy": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Close Combat", "Poison Jab", "Dual Wingbeat"],
+				"abilities": ["Intimidate"],
+				"items": ["White Herb"]
+			}
+		]
+	},
+	"petmodderarestheomega": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Close Combat", "Poison Jab", "Dual Wingbeat"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["White Herb"]
+			}
+		]
+	},
+	"petmoddermintchip": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Body Slam", "Ice Punch", "U-turn"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Eject Button"]
+			}
+		]
+	},
+	"petmodderTheevilmouse": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Body Slam", "Ice Punch", "U-turn"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Eject Button"]
+			}
+		]
+	},
+	"petmoddertoxicariados": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Venoshock", "Hex", "U-turn"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Occa Berry"]
+			}
+		]
+	},
+	"petmodderpileoftrubbish": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Venoshock", "Hex", "U-turn"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Occa Berry"]
+			}
+		]
+	},
+	"petmodderhimithey": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Iron Head", "Dual Wingbeat", "Hone Claws"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Occa Berry"]
+			}
+		]
+	},
+	"petmodderfalchion": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Iron Head", "Dual Wingbeat", "Hone Claws"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Occa Berry"]
+			}
+		]
+	},
+	"petmodderbekama": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Psychic", "Power Gem", "Thunderbolt"],
+				"abilities": ["Analytic"],
+				"items": ["Eject Button"]
+			}
+		]
+	},
+	"petmodderauctoria": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Psychic", "Power Gem", "Thunderbolt"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Eject Button"]
+			}
+		]
+	},
+	"petmodderstarpiranhaplant": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Crunch", "Seed Bomb", "Body Slam"],
+				"abilities": ["Strong Jaw"],
+				"items": ["Choice Band", "Choice Scarf"]
+			}
+		]
+	},
+	"petmodderisangy": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Thunderbolt", "Draining Kiss", "U-turn"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Terrain Extender"]
+			}
+		]
+	},
+	"petmodderreeonthestreet": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Recycle", "Substitute", "Draco Meteor"],
+				"abilities": ["Ripen"],
+				"items": ["Sitrus Berry"]
+			}
+		]
+	},
+	"petmoddermimik909": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Blizzard", "Shadow Ball", "Overheat", "U-turn"],
+				"abilities": ["Snow Warning"],
+				"items": ["Light Clay"]
+			}
+		]
+	},
+	"petmodderimaginaryneon": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Dark Pulse", "Dragon Pulse", "Flash Cannon"],
+				"abilities": ["Supreme Overlord"],
+				"items": ["Choice Scarf"]
+			}
+		]
+	},
+	"petmodderiforgetwhyimhere": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rubba Dub Sub", "Power Gem", "Energy Ball", "U-turn"],
+				"abilities": ["No Guard"],
+				"items": ["Choice Scarf"]
+			}
+		]
+	},
+	"poltkinspice": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Flare Blitz", "Wood Hammer", "Wave Crash", "Milk Drink", "Fire Lash"],
+				"abilities": ["Regenerator"],
+				"items": ["Leftovers"]
+			},
+			{
+				"role": "Bulky Support",
+				"movepool": ["Magma Storm", "Leech Seed", "Horn Leech", "Milk Drink", "Toxic", "Protect"],
+				"abilities": ["Regenerator"],
+				"items": ["Leftovers"]
+			}
+		]
+	},
+	"seedstrom": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Support",
+				"movepool": ["Sappy Seed", "Storm Swing", "Strength Sap", "Defog"],
+				"abilities": ["Delta Stream"],
+				"items": ["Heavy-Duty Boots"]
+			},
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Sappy Seed", "Storm Swing", "Earthquake", "Defog"],
+				"abilities": ["Delta Stream"],
+				"items": ["Heavy-Duty Boots"]
+			}
+		]
+	},
+	"gravitart": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Fast Attacker",
+				"movepool": ["Grassy Glide", "Jaw Lock", "U-turn", "Apple Acid", "Synthesis"],
+				"abilities": ["Grassy Surge"],
+				"items": ["Terrain Extender"]
+			},
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Grav Apple", "U-turn", "Heat Crash", "Pursuit", "Heavy Slam", "Dragon Rush"],
+				"abilities": ["Falling Fighter"],
+				"items": ["Choice Band"]
+			},
+			{
+				"role": "Generalist",
+				"movepool": ["Grassy Glide", "Draco Meteor", "Sucker Punch", "U-turn"],
+				"abilities": ["Grassy Surge"],
+				"items": ["Life Orb"]
+			}
+		]
+	},
+	"foliavite": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Choice Item user",
+				"movepool": ["Wood Hammer", "Leaf Blade", "Poison Jab", "Gunk Shot", "Knock Off", "Hide Away"],
+				"abilities": ["Intimidate"],
+				"items": ["Choice Scarf", "Heavy Duty Boots"]
+			},
+			{
+				"role": "Wallbreaker",
+				"movepool": ["Poison Jab", "Leech Seed", "Protect", "Knock Off", "Synthesis", "First Impression", "Wood Hammer"],
+				"abilities": ["Intimidate"],
+				"items": ["Heavy-Duty Boots"]
+			}
+		]
+	},
+	"harvesta": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Support",
+				"movepool": ["Fire Lash", "Leech Seed", "Protect", "Substitute"],
+				"abilities": ["Harvest"],
+				"items": ["Sitrus Berry"]
+			},
+			{
+				"role": "AV Pivot",
+				"movepool": ["Flare Blitz", "Leaf Blade", "U-turn", "Synthesis"],
+				"abilities": ["Harvest"],
+				"items": ["Sitrus Berry"]
+			},
+			{
+				"role": "Staller",
+				"movepool": ["Flare Blitz", "Protect", "Leech Seed", "Will-o-Wisp"],
+				"abilities": ["Harvest"],
+				"items": ["Sitrus Berry"]
+			}
+		]
+	},
+	"headlesshorsemanpumpkinhead": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Fast Support",
+				"movepool": ["Hypnosis", "Will-O-Wisp", "Glare", "Ceaseless Edge", "Spirit Break"],
+				"abilities": ["As One (Horseman)"],
+				"items": ["Leftovers"]
+			},
+			{
+				"role": "Choice Item user",
+				"movepool": ["Switcheroo", "Astral Barrage", "Blood Moon", "Night Daze", "Fiery Wrath"],
+				"abilities": ["As One (Horseman)"],
+				"items": ["Choice Specs"]
+			},
+			{
+				"role": "Fast Attacker",
+				"movepool": ["Bitter Blade", "High Horsepower", "Poltergeist", "Throat Chop"],
+				"abilities": ["As One (Horseman)"],
+				"items": ["Life Orb"]
+			}
+		]
+	},
+	"hauntmare": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Setup Sweeper",
+				"movepool": ["Close Combat", "Iron Head", "Extreme Speed", "Swords Dance"],
+				"abilities": ["Scrappy"],
+				"items": ["Old Hunter's Blade"]
+			},
+			{
+				"role": "Fast Support",
+				"movepool": ["Close Combat", "Iron Head", "Parting Shot", "Spikes"],
+				"abilities": ["Scrappy"],
+				"items": ["Old Hunter's Blade"]
+			},
+			{
+				"role": "Fast Attacker",
+				"movepool": ["Close Combat", "Iron Head", "Pursuit", "Parting Shot"],
+				"abilities": ["Scrappy"],
+				"items": ["Choice Scarf"]
+			},
+			{
+				"role": "Wallbreaker",
+				"movepool": ["Close Combat", "Iron Head", "Extreme Speed", "Parting Shot"],
+				"abilities": ["Scrappy"],
+				"items": ["Choice Band"]
+			}
+		]
+	},
+	"wendihoax": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Choice Item user",
+				"movepool": ["Double-Edge/ Body Slam", "Crunch", "Switcheroo", "U-turn"],
+				"abilities": ["Sticky Hold"],
+				"items": ["Choice Band"]
+			},
+			{
+				"role": "Setup Sweeper",
+				"movepool": ["Swords Dance / Bulk Up", "Disguise Slap", "Crunch", "Drain Punch", "Horn Leech", "Gunk Shot"],
+				"abilities": ["Sticky Hold"],
+				"items": ["Poison Barb"]
+			},
+			{
+				"role": "Bulky Support",
+				"movepool": ["Crunch", "Disguise Slap", "U-turn", "Body Slam", "Drain Punch", "Horn Leech"],
+				"abilities": ["Sticky Hold"],
+				"items": ["Light Ball"]
+			},
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Disguise Slap", "Double-Edge", "Crunch", "Drain Punch", "Horn Leech"],
+				"abilities": ["Immunity"],
+				"items": ["Toxic Orb"]
+			}
+		]
+	},
+	"verdame": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Setup Sweeper",
+				"movepool": ["Moonblast", "Shadow Ball", "Calm Mind", "Substitute"],
+				"abilities": ["Perish Body"],
+				"items": ["Leftovers"]
+			},
+			{
+				"role": "AV Pivot",
+				"movepool": ["Moonblast", "Shadow Ball", "Encore", "Will-O-Wisp", "Moonlight", "U-turn"],
+				"abilities": ["Perish Body"],
+				"items": ["Heavy-Duty-Boots"]
+			}
+		]
+	},
+	"tyrannotserious": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Setup Sweeper",
+				"movepool": ["Double-Edge", "Dragon Hammer", "Flare Blitz", "Dragon Dance"],
+				"abilities": ["Cushion Head"],
+				"items": ["Life Orb"]
+			},
+			{
+				"role": "Wallbreaker",
+				"movepool": ["Double-Edge", "Dragon Hammer", "Flare Blitz", "Head Smash"],
+				"abilities": ["Cushion Head"],
+				"items": ["Choice Band"]
+			}
+		]
+	},
+	"abductoid": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Support",
+				"movepool": ["Psychic Noise", "Future Sight", "Night Shade", "Recover", "Teleport"],
+				"abilities": ["Abduction"],
+				"items": ["Heavy-Duty-Boots"]
+			},
+			{
+				"role": "Bulky Setup",
+				"movepool": ["Mystical Power", "Dazzling Gleam", "Focus Blast", "Thunder Wave", "Recover"],
+				"abilities": ["Abduction"],
+				"items": ["Leftovers"]
+			}
+		]
+	},
+	"swirlixhatted": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Moonblast", "Wish", "Protect", "Calm Mind"],
+				"abilities": ["Fluffy"],
+				"items": ["Prince's Hat"]
+			},
+			{
+				"role": "Bulky Support",
+				"movepool": ["Moonblast", "Dark Pulse", "Fire Blast", "Nuzzle"],
+				"abilities": ["Mega Sol"],
+				"items": ["Prince's Hat"]
+			}
+		]
+	},
+	"mimikry": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Fast Attacker",
+				"movepool": ["Agility", "Temper Flare", "Lash Out", "Stomping Tantrum"],
+				"abilities": ["Costume Confusion"],
+				"items": ["Life Orb"]
+			},
+			{
+				"role": "Wallbreaker",
+				"movepool": ["Outrage", "Raging Fury", "Lash Out", "Parting Shot"],
+				"abilities": ["Costume Confusion"],
+				"items": ["Choice Band"]
+			},
+			{
+				"role": "Fast Support",
+				"movepool": ["Outrage", "Raging Fury", "Lash Out", "Parting Shot"],
+				"abilities": ["Costume Confusion"],
+				"items": ["Choice Scarf"]
+			}
+		]
+	},
+	"faincess": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Support",
+				"movepool": ["Moonblast", "Lovely Kiss", "Slack Off", "Defog"],
+				"abilities": ["Princess Power"],
+				"items": ["Eviolite"]
+			},
+			{
+				"role": "Bulky Setup",
+				"movepool": ["Moonblast", "Make It Rain", "Slack Off", "Take Heart"],
+				"abilities": ["Princess Power"],
+				"items": ["Eviolite"]
+			}
+		]
+	},
+	"spinarakman": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "AV Pivot",
+				"movepool": ["U-turn", "Rapid Spin", "Close Combat", "Knock Off"],
+				"abilities": ["Regenerator"],
+				"items": ["Assault Vest"]
+			},
+			{
+				"role": "Bulky Setup",
+				"movepool": ["Bulk Up", "Drain Punch", "Leech Life", "Knock Off"],
+				"abilities": ["Regenerator"],
+				"items": ["Leftovers"]
+			}
+		]
+	},
+	"cacackle": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Fast Attacker",
+				"movepool": ["Psychic", "Thunderbolt", "Ice Beam", "Hurricane"],
+				"abilities": ["Magic Bounce"],
+				"items": ["Choice Specs"]
+			},
+			{
+				"role": "Choice Item user",
+				"movepool": ["Will-o-Wisp", "Broom Sweep", "Trick", "U-turn"],
+				"abilities": ["Magic Guard"],
+				"items": ["Choice Scarf"]
+			},
+			{
+				"role": "Bulky Setup",
+				"movepool": ["Calm Mind", "Psychic Noise", "Air Slash", "Flamethrower"],
+				"abilities": ["Magic Bounce"],
+				"items": ["Leftovers"]
+			}
+		]
+	},
+	"boospool": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Fast Support",
+				"movepool": ["Patchwork Press", "Will-O-Wisp", "Skill Swap", "Spikes"],
+				"abilities": ["Normalize"],
+				"items": ["Heavy-Duty Boots"]
+			},
+			{
+				"role": "Bulky Support",
+				"movepool": ["Patchwork Press", "Will-O-Wisp", "Encore", "Spikes"],
+				"abilities": ["Prankster"],
+				"items": ["Leftovers"]
+			}
+		]
+	},
+	"dualhan": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Wallbreaker",
+				"movepool": ["Double Iron Bash", "Double Dip", "Fire Punch", "Thunder Punch"],
+				"abilities": ["Sheer Force"],
+				"items": ["Life Orb"]
+			}
+		]
+	},
+	"cuddlbite": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Support",
+				"movepool": ["Moonblast", "Draco Meteor", "Dragon Pulse", "Roost", "Thunder Wave", "Yawn", "Dragon Tail"],
+				"abilities": ["Reassure"],
+				"items": ["Leftovers"]
+			},
+			{
+				"role": "Bulky Setup",
+				"movepool": ["Moonblast", "Body Press", "Cotton Guard", "Roost"],
+				"abilities": ["Reassure"],
+				"items": ["Leftovers"]
+			},
+			{
+				"role": "Wallbreaker",
+				"movepool": ["Moonblast", "Draco Meteor", "Dragon Pulse", "Flamethrower", "Fire Blast", "Roost"],
+				"abilities": ["Reassure"],
+				"items": ["Life Orb"]
+			}
+		]
+	},
+	"baalsket": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Support",
+				"movepool": ["Recover", "Shadow Ball", "Sludge Bomb", "Knock Off", "Disable", "Taunt", "Stealth Rock"],
+				"abilities": ["Barf Out"],
+				"items": ["Colbur Berry"]
+			},
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Overheat", "Shadow Ball", "Sludge Bomb", "Knock Off", "Dazzling Gleam", "Recover"],
+				"abilities": ["Barf Out"],
+				"items": ["Eject Pack"]
+			}
+		]
+	},
+	"rotomstereo": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Boomburst", "Nasty Plot", "Thunderbolt", "Volt Switch"],
+				"abilities": ["Levitate"],
+				"items": ["Leftovers"]
+			},
+			{
+				"role": "Bulky Support",
+				"movepool": ["Boomburst", "Volt Switch", "Trick", "Pain Split"],
+				"abilities": ["Levitate"],
+				"items": ["Choice Scarf"]
+			}
+		]
+	},
+	"popotion": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Setup",
+				"movepool": ["Scald", "Strange Steam", "Slack Off", "Calm Mind"],
+				"abilities": ["Fizzy Body"],
+				"items": ["Leftovers"]
+			},
+			{
+				"role": "Fast Support",
+				"movepool": ["Scald", "Strange Steam", "Slack Off", "Trick"],
+				"abilities": ["Fizzy Body"],
+				"items": ["Choice Scarf"]
+			},
+			{
+				"role": "Bulky Support",
+				"movepool": ["Scald", "Slack Off", "Reflect", "Light Screen"],
+				"abilities": ["Fizzy Body"],
+				"items": ["Light Clay"]
+			}
+		]
+	},
+	"appletunpumpkin": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Seed Bomb", "Recover", "Dragon Tail", "Gyro Ball"],
+				"abilities": ["Thick Fat"],
+				"items": ["Leftovers"]
+			},
+			{
+				"role": "Bulky Setup",
+				"movepool": ["Iron Defense", "Body Press", "Pumpkin Papow", "Trick Room"],
+				"abilities": ["Cheek Pouch"],
+				"items": ["Ganlon Berry"]
+			}
+		]
+	},
+	"appletunp": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Wallbreaker",
+				"movepool": ["Pumpkin Papow", "Earthquake", "Dragon Claw", "Trick Room"],
+				"abilities": ["Ripen"],
+				"items": ["Liechi Berry"]
+			}
+		]
+	},
+	"jumpider": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["First Impression", "Knock Off", "U-turn", "Gunk Shot"],
+				"abilities": ["Stakeout"],
+				"items": ["Heavy-Duty Boots"]
+			},
+			{
+				"role": "Bulky Support",
+				"movepool": ["Sticky Web", "Knock Off", "U-turn", "Toxic Spikes", "Spikes", "Circle Throw"],
+				"abilities": ["Stakeout"],
+				"items": ["Heavy-Duty Boots"]
+			}
+		]
+	},
+	"metallergy": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Support",
+				"movepool": ["Hurricane", "Defog", "Heal Order", "Spikes", "U-turn"],
+				"abilities": ["Evangel Eyes"],
+				"items": ["Rocky Helmet", "Leftovers"]
+			},
+			{
+				"role": "Bulky Setup",
+				"movepool": ["Hurricane", "Flash Cannon", "Meteor Beam", "Heal Order"],
+				"abilities": ["Evangel Eyes"],
+				"items": ["Power Herb"]
+			}
+		]
+	},
+	"vamplasma": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Wallbreaker",
+				"movepool": ["Plasma Drainer", "Crunch", "U-turn", "Play Rough", "Psychic Fangs", "Taunt", "Thunder Wave"],
+				"abilities": ["Levitate"],
+				"items": ["Life Orb"]
+			},
+			{
+				"role": "Bulky Setup",
+				"movepool": ["Swords Dance", "Plasma Drainer", "Crunch", "Sucker Punch", "Play Rough", "Psychic Fangs"],
+				"abilities": ["Levitate"],
+				"items": ["Leftovers"]
+			}
+		]
+	},
+	"dullanggal": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Setup Sweeper",
+				"movepool": ["Outrage", "Dual Wingbeat", "Earthquake", "Dragon Dance"],
+				"abilities": ["Segmentation"],
+				"items": ["Dragonium Z"]
+			},
+			{
+				"role": "Bulky Setup",
+				"movepool": ["Dragon Claw", "Earthquake", "Roost", "Dragon Dance"],
+				"abilities": ["Segmentation"],
+				"items": ["Heavy-Duty Boots"]
+			},
+			{
+				"role": "Wallbreaker",
+				"movepool": ["Outrage", "Dual Wingbeat", "Earthquake", "U-turn"],
+				"abilities": ["Segmentation"],
+				"items": ["Choice Band"]
+			},
+			{
+				"role": "Bulky Support",
+				"movepool": ["Knock Off", "U-turn", "Roost", "Defog"],
+				"abilities": ["Segmentation"],
+				"items": ["Heavy-Duty Boots"]
+			}
+		]
+	},
+	"krampird": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Fast Support",
+				"movepool": ["Present", "Knock Off", "Ice Spinner", "Spikes", "Rapid Spin", "Parting Shot"],
+				"abilities": ["Hustle", "Naughty List"],
+				"items": ["Heavy-Duty-Boots"]
+			},
+			{
+				"role": "Wallbreaker",
+				"movepool": ["Present", "Knock Off", "Icicle Crash", "Brave Bird", "Gunk Shot", "Drill Run", "Ice Shard"],
+				"abilities": ["Hustle", "Naughty List"],
+				"items": ["Choice Band"]
+			}
+		]
+	},
+	"trickstaur": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Setup",
+				"movepool": ["Bulk Up", "Knock Off", "Zen Headbutt", "Drain Punch"],
+				"abilities": ["Scrappy"],
+				"items": ["Leftovers"]
+			},
+			{
+				"role": "Wallbreaker",
+				"movepool": ["Trick Room", "Close Combat", "Zen Headbutt", "Psycho Trap"],
+				"abilities": ["Scrappy"],
+				"items": ["Life Orb"]
+			},
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Close Combat", "Trick", "Knock Off", "Psycho Trap"],
+				"abilities": ["Scrappy"],
+				"items": ["Choice Band"]
+			}
+		]
+	},
+	"cosmops": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Wallbreaker",
+				"movepool": ["Trick Room", "Meteor Beam", "Earth Power", "Zap Cannon", "Moonblast"],
+				"abilities": ["No Guard"],
+				"items": ["Power Herb"]
+			},
+			{
+				"role": "Setup Sweeper",
+				"movepool": ["Stargaze", "Moonblast", "Moonlight", "Earth Power", "Zap Cannon"],
+				"abilities": ["No Guard"],
+				"items": ["Leftovers"]
+			},
+			{
+				"role": "Bulky Support",
+				"movepool": ["Stealth Rock", "Spikes", "Moonlight", "Moonblast", "Zap Cannon"],
+				"abilities": ["No Guard"],
+				"items": ["Leftovers"]
+			}
+		]
+	},
+	"inverturn": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Support",
+				"movepool": ["Sappy Seed", "Stone Edge", "Synthesis", "Stealth Rock"],
+				"abilities": ["Table-Turn"],
+				"items": ["Leftovers"]
+			},
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Sappy Seed", "Stone Edge", "Iron Head", "Stealth Rock"],
+				"abilities": ["Table-Turn"],
+				"items": ["Leftovers"]
+			},
+			{
+				"role": "Fast Attacker",
+				"movepool": ["Leaf Storm", "Power Gem", "Earth Power", "Synthesis"],
+				"abilities": ["Contrary"],
+				"items": ["Leftovers"]
+			}
+		]
+	},
+	"gwcarver": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Fast Support",
+				"movepool": ["Green Thumb", "Grassy Glide", "High Horsepower", "Knock Off", "U-Turn"],
+				"abilities": ["Grassy Surge"],
+				"items": ["Hearthflame Mask", "Wellspring Mask"]
+			}
+		]
+	},
+	"hackolantern": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Support",
+				"movepool": ["Leech Seed", "Spiky Shield", "Rapid Spin", "Volt Switch"],
+				"abilities": ["Code Armor"],
+				"items": ["Leftovers"]
+			}
+		]
+	},
+	"jackogoomba": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Setup Sweeper",
+				"movepool": ["Head Charge", "Seed Bomb", "Curse", "Gunk Shot", "Psychic Fangs"],
+				"abilities": ["Pumpkin Disguise"],
+				"items": ["Leftovers"]
+			},
+			{
+				"role": "Bulky Support",
+				"movepool": ["Head Charge", "Seed Bomb", "Gunk Shot", "Moonlight", "Will-O-Wisp"],
+				"abilities": ["Pumpkin Disguise"],
+				"items": ["Leftovers"]
+			}
+		]
+	},
+	"wrapwatt": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Fast Support",
+				"movepool": ["Thunder Cage", "Sludge Bomb", "Toxic", "Baneful Bunker"],
+				"abilities": ["Wrap-Up"],
+				"items": ["Black Sludge"]
+			}
+		]
+	},
+	"wrappior": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "AV Pivot",
+				"movepool": ["Wrapper Slice", "U-Turn", "Sacred Sword", "Aqua Cutter", "Leaf Blade", "Night Slash"],
+				"abilities": ["Sharpness"],
+				"items": ["Assault Vest"]
+			},
+			{
+				"role": "Fast Attacker",
+				"movepool": ["Wrapper Slice", "Sacred Sword", "U-Turn", "Aqua Cutter", "Leaf Blade", "Night Slash", "Encore"],
+				"abilities": ["Sharpness"],
+				"items": ["Assault Vest"]
+			}
+		]
+	},
+	"caramalice": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Setup",
+				"movepool": ["Swords Dance", "Leaf Blade", "Hidden Razor", "Sacred Sword", "Night Slash"],
+				"abilities": ["Sharpness"],
+				"items": ["Life Orb"]
+			},
+			{
+				"role": "Choice Item user",
+				"movepool": ["U-Turn", "Leaf Blade", "Hidden Razor", "Sacred Sword"],
+				"abilities": ["Sharpness"],
+				"items": ["Choice Band"]
+			},
+			{
+				"role": "Bulky Support",
+				"movepool": ["Spikes", "Leech Seed", "Hidden Razor", "Knock Off"],
+				"abilities": ["Sharpness"],
+				"items": ["Rocky Helmet"]
+			}
+		]
+	},
+	"rock": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Support",
+				"movepool": ["Power Gem", "Body Slam", "Stealth Rock", "Moonlight"],
+				"abilities": ["Solid Rock"],
+				"items": ["Heavy-Duty Boots"]
+			}
+		]
+	},
+	"pirouetch": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Fast Attacker",
+				"movepool": ["Moonblast", "Work Up", "Tachyon Cutter", "Secret Sword"],
+				"abilities": ["Sweet Veil"],
+				"items": ["Royal Razor"]
+			},
+			{
+				"role": "Fast Support",
+				"movepool": ["Trick Room", "U-turn", "Spikes", "Thunder Wave", "Toxic Spikes"],
+				"abilities": ["Sweet Veil"],
+				"items": ["Leftovers"]
+			},
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Acid Armor", "Work Up", "Moonblast", "Stored Power"],
+				"abilities": ["Sweet Veil"],
+				"items": ["Leftovers"]
+			}
+		]
+	},
+	"unluckat": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Fast Attacker",
+				"movepool": ["Night Slash", "Shadow Claw", "High Jump Kick", "Hone Claws"],
+				"abilities": ["Super Luck"],
+				"items": ["Life Orb"]
+			},
+			{
+				"role": "Setup Sweeper",
+				"movepool": ["Knock Off", "Shadow Ball", "Giga Impact", "Swords Dance"],
+				"abilities": ["blackcatblitz"],
+				"items": ["Leftovers"]
+			},
+			{
+				"role": "Wallbreaker",
+				"movepool": ["Shadow Ball", "Meteor Beam", "Dark Pulse", "Hyper Beam"],
+				"abilities": ["blackcatblitz"],
+				"items": ["Life Orb"]
+			}
+		]
+	},
+	"maryflect": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Recover", "Shadow Claw", "Triple Axel", "Outrage", "Destiny Bond", "Triple Dive"],
+				"abilities": ["mirrorshards"],
+				"items": ["Leftovers"]
+			}
+		]
+	},
+	"laddevour": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["ironcage", "Iron Defense", "Body Press", "Rest"],
+				"abilities": ["Filter"],
+				"teraTypes": ["Fighting"],
+				"items": ["Leftovers"]
+			}
+		]
+	},
+	"cauldronisoar": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Fast Attacker",
+				"movepool": ["Bulk Up", "Gunk Shot", "Iron Head", "Brave Bird"],
+				"abilities": ["toxicsoar"],
+				"items": ["Heavy-Duty Boots"]
+			},
+			{
+				"role": "Setup Sweeper",
+				"movepool": ["Calm Mind", "Air Slash", "Sludge Bomb", "Fire Blast"],
+				"abilities": ["toxicsoar"],
+				"items": ["Heavy-Duty Boots"]
+			}
+		]
+	},
+	"slweesh": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Setup Sweeper",
+				"movepool": ["Swords Dance", "Jaw Lock", "Iron Head", "Psychic Fangs", "Pursuit"],
+				"abilities": ["wrappedup"]
+			}
+		]
+	},
+	"funeraltl": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Fast Attacker",
+				"movepool": ["U-turn", "silentwind", "Moonblast", "Leaf Storm", "Energy Ball", "Sludge Bomb", "Roost"],
+				"abilities": ["Wandering Spirit"],
+				"items": ["Heavy-Duty Boots"]
+			},
+			{
+				"role": "Fast Support",
+				"movepool": ["U-turn", "silentwind", "Moonblast", "Leech Seed", "Thunder Wave", "Roost"],
+				"abilities": ["Wandering Spirit"],
+				"items": ["Heavy-Duty Boots", "Leftovers"]
+			}
+		]
+	},
+	"azereveras": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Support",
+				"movepool": ["Dazzling Gleam", "Flamethrower", "Psychic", "Thunderbolt"],
+				"abilities": ["Ethereal Sugars"],
+				"items": ["Heavy-Duty Boots"]
+			}
+		]
+	},
+	"yamaskcalavera": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Support",
+				"movepool": ["Reflect", "Light Screen", "Trick Room", "Protect"],
+				"abilities": ["Ofrenda"],
+				"items": ["Light Clay"]
+			},
+			{
+				"role": "Staller",
+				"movepool": ["Trick Room", "Giga Drain", "Will-O-Wisp", "Protect"],
+				"abilities": ["Ofrenda"],
+				"items": ["Eviolite"]
+			},
+			{
+				"role": "Bulky Attacker",
+				"movepool": ["Rest", "Sleep Talk", "Hex", "Giga Drain"],
+				"abilities": ["Ofrenda"],
+				"items": ["Eviolite"]
+			}
+		]
+	},
+	"spirpapel": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Wallbreaker",
+				"movepool": ["Papel Pummel", "Grassy Glide", "Close Combat", "U-turn"],
+				"abilities": ["Grassy Surge"],
+				"items": ["Choice Band"]
+			},
+			{
+				"role": "Setup Sweeper",
+				"movepool": ["Papel Pummel", "Grassy Glide", "Close Combat", "Bulk Up"],
+				"abilities": ["Grassy Surge"],
+				"items": ["Life Orb"]
+			},
+			{
+				"role": "Fast Bulky Setup",
+				"movepool": ["Papel Pummel", "Grassy Glide", "Close Combat", "Celebrate"],
+				"abilities": ["Grassy Surge"],
+				"items": ["Normalium Z"]
+			}
+		]
+	},
+	"spirpapelcalaca": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Bulky Setup",
+				"movepool": ["Papel Pummel", "Giga Drain", "Hurricane", "Calm Mind"],
+				"abilities": ["Triage"],
+				"items": ["Life Orb"]
+			},
+			{
+				"role": "Bulky Support",
+				"movepool": ["Papel Pummel", "Giga Drain", "U-turn", "Defog"],
+				"abilities": ["Triage"],
+				"items": ["Heavy-Duty Boots"]
+			}
+		]
+	},
+	"spirpapelvela": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Wallbreaker",
+				"movepool": ["Papel Pummel", "Solar Beam", "U-turn", "Trick"],
+				"abilities": ["Drought"],
+				"items": ["Choice Specs"]
+			},
+			{
+				"role": "Fast Attacker",
+				"movepool": ["Papel Pummel", "Solar Beam", "U-turn", "Trick"],
+				"abilities": ["Drought"],
+				"items": ["Choice Scarf"]
+			},
+			{
+				"role": "Setup Sweeper",
+				"movepool": ["Papel Pummel", "Solar Beam", "Encore", "Calm Mind"],
+				"abilities": ["Drought"],
+				"items": ["Heavy-Duty Boots"]
+			},
+			{
+				"role": "Fast Bulky Setup",
+				"movepool": ["Papel Pummel", "Giga Drain", "Encore", "Celebrate"],
+				"abilities": ["Drought"],
+				"items": ["Normalium Z"]
+			},
+			{
+				"role": "Bulky Support",
+				"movepool": ["papelpummel", "Solar Beam", "U-turn", "Defog"],
+				"abilities": ["Drought"],
+				"items": ["Heavy-Duty Boots"]
+			}
+		]
+	},
+	"spirpapelcempaschil": {
+		"level": 80,
+		"sets": [
+			{
+				"role": "Wallbreaker",
+				"movepool": ["papelpummel", "Leaf Blade", "U-turn", "Trick"],
+				"abilities": ["Flower Veil"],
+				"items": ["Choice Band"]
+			},
+			{
+				"role": "Fast Attacker",
+				"movepool": ["papelpummel", "Leaf Blade", "U-turn", "Trick"],
+				"abilities": ["Flower Veil"],
+				"items": ["Choice Scarf"]
+			},
+			{
+				"role": "Setup Sweeper",
+				"movepool": ["papelpummel", "Leaf Blade", "Encore", "Bulk Up"],
+				"abilities": ["Flower Veil"],
+				"items": ["Life Orb"]
+			},
+			{
+				"role": "Fast Bulky Setup",
+				"movepool": ["papelpummel", "Leaf Blade", "Encore", "Celebrate"],
+				"abilities": ["Flower Veil"],
+				"items": ["Normalium Z"]
+			},
+			{
+				"role": "Bulky Support",
+				"movepool": ["papelpummel", "Leaf Blade", "U-turn", "Defog"],
+				"abilities": ["Flower Veil"],
+				"items": ["Heavy-Duty Boots"]
+			}
+		]
+	}
+}

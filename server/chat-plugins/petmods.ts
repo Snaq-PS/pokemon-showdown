@@ -8,13 +8,6 @@
 
 import { FS } from '../../lib';
 
-/* interface Entries {
-	redName: string;
-	greenName?: string;
-	redEntry: string;
-	greenEntry?: string;
-} */
-
 function formatMove(move: Move | string, format: Format) {
 	const dex = Dex.forFormat(format);
 	const parentDex = Dex.forFormat(dex.parentMod);
@@ -74,11 +67,11 @@ export const commands: Chat.ChatCommands = {
 	chatbats: 'petmodrandbats',
 	pmotm: 'petmodrandbats',
 	pmlc: 'petmodrandbats',
+	halloadvent: 'petmodrandbats',
 	petmodrandbats(target, room, user, connection, cmd) {
 		if (!target || cmd === 'petmodrandbats') return this.parse(`/help petmodrandbats`);
-		const format = Dex.formats.get(Dex.getAlias(cmd as ID) || cmd);
-		if (!format) return this.errorReply(`No format ${cmd} was found.`);
-		if (format.id === 'gen9randomtandem') return this.parse(`/help tandems`);
+		const format = Dex.formats.get(Dex.getAlias(Dex.toID(cmd))) || cmd;
+		if (!format.exists) return this.errorReply(`No format named "${cmd}" was found.`);
 
 		if (!this.runBroadcast()) return;
 
@@ -94,6 +87,7 @@ export const commands: Chat.ChatCommands = {
 			inexactMsg = `No Pok\u00e9mon named '${target}' was found in ${format}. Searching for '${searchResults[0].name}' instead.`;
 		}
 		const species = dex.species.get(searchResults[0].name);
+		if (species.id === 'petmodder') throw new Chat.ErrorMessage(`Showing all these sets would nuke the chat, please search each forme individually.`);
 		const movesets = [];
 		const setsToCheck = [species];
 		if (species.otherFormes) setsToCheck.push(...species.otherFormes.map(pkmn => dex.species.get(pkmn)));
@@ -133,30 +127,6 @@ export const commands: Chat.ChatCommands = {
 		`/pmotm [pokemon] - Shows sets of a Pokemon in the Pet Mod of the Month.`,
 		`/pmlc [pokemon] - Shows sets of a Pokemon in the Pet Mod Leader's Choice`,
 		`/chatbats [pokemon] - Shows sets of a Pokemon in [Gen 9] Chatbats.`,
+		`/halloadvent [pokemon] - Shows sets of a Pokemon in [Gen 9] Pet Mods's Halloween! Random Battle`,
 	],
-	/* dexentry(target, room, user, connection, cmd) {
-		if (!target) return this.parse('/help dexentry');
-
-		const dex = Dex.forFormat('gen9randombattle');
-		const dexEntry: { [species: string]: Entries } = require('./../../data/mods/gen9randomtandem/entries.json');
-
-		const pokemon = dex.species.get(target);
-		const entry = dexEntry[pokemon.id];
-
-		if (!pokemon.exists || !entry) return this.parse('/help dexentry');
-		if (!this.runBroadcast()) return;
-
-		let buf = `<span class="gray">Flavor for ${pokemon.name}:</span><br/>`;
-		// we COULD guard against nonexistence but that should never happen anyway
-		buf += `<b>${entry.redName} Red:</b> ${entry.redEntry}`;
-		if (entry.greenName && entry.greenEntry) {
-			buf += `<br/><b>${entry.greenName} Green:</b> ${entry.greenEntry}`;
-		}
-
-		this.sendReplyBox(buf);
-	},
-	dexentryhelp: [
-		`/dexentry [pokemon] - Show the Dex flavor for the [pokemon] in [FILL].`,
-		`!dexentry [pokemon] - Shows everyone that information. Requires: + % @ ~`,
-	], */
 };

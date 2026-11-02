@@ -100,6 +100,8 @@ export const Aliases: import('../sim/dex').AliasesTable = {
 	reset: "[Gen 9] Resetmons Random Battle",
 	pmlc: "[Gen 9] Mix and Mega: Limited Supply Random Battle",
 	mnmls: "[Gen 9] Mix and Mega: Limited Supply Random Battle",
+	halloadvent: "[Gen 9] Pet Mods's Halloween! Random Battle",
+	pmhalloween: "[Gen 9] Pet Mods's Halloween!",
 
 	// mega evos --- 1st ordered alphabetically by species, 2nd by alias
 	megasnow: "Abomasnow-Mega",
