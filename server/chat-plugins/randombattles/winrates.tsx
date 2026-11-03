@@ -48,7 +48,7 @@ function getDefaultStats(): Stats {
 			gen9randomdoublesbattle: { mons: {} },
 			gen9babyrandombattle: { mons: {} },
 			gen9chatbats: { mons: {} },
-			gen9ccapm2025randombattle: { mons: {} },
+			gen9resetmonsrandombattle: { mons: {} },
 			gen9mixandmegalimitedsupplyrandombattle: { mons: {} },
 			gen9superstaffbrosultimate: { mons: {} },
 			gen9championsrandombattle: { mons: {} },
@@ -185,7 +185,12 @@ async function collectStats(battle: RoomBattle, winner: ID, players: ID[]) {
 	} else if (format.team === 'randomBaby') {
 		// ladder is even more inactive, so an even lower threshold
 		eloFloor = 1000;
-	} else if (format.mod === 'gen9mnmlimitedsupply') {
+	} else if (
+		format.mod === 'gen9mnmlimitedsupply' ||
+		format.mod === 'gen9halloween' ||
+		format.mod === 'chatbats'
+	) {
+		// pet mod ladders that aren't the pmotm
 		eloFloor = 1100;
 	} else if (format.mod !== `gen${Dex.gen}`) {
 		eloFloor = 1300;
@@ -193,7 +198,7 @@ async function collectStats(battle: RoomBattle, winner: ID, players: ID[]) {
 		// may need to be raised again if ladder takes off further
 		eloFloor = 1400;
 	}
-	if (!formatData || ((format.mod !== 'gen9ssb' && format.mod !== 'chatbats') &&
+	if (!formatData || ((format.mod !== 'gen9ssb' && format.mod !== 'gen9resetmons') &&
 		battle.rated < eloFloor) || !winner)
 		return;
 	checkRollover();
